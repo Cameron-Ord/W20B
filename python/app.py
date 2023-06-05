@@ -20,9 +20,9 @@ def select_dogs():
     results = cursor.fetchall()
 
     if(type(results) == list):
-        json = json.dumps(results, default=str)
+        rst_json = json.dumps(results, default=str)
         end_conn()
-        return json
+        return rst_json
     else:
         print("error")
         end_conn()
@@ -32,9 +32,9 @@ def select_cats():
     cursor.execute('CALL select_cats()')
     results = cursor.fetchall()
     if(type(results) == list):
-        json = json.dumps(results, default=str)
+        rst_json = json.dumps(results, default=str)
         end_conn()
-        return json
+        return rst_json
     else:
         print("error")
         end_conn()
@@ -44,9 +44,9 @@ def select_animals():
     cursor.execute('CALL select_animals()')
     results = cursor.fetchall()
     if(type(results) == list):
-        json = json.dumps(results, default=str)
+        rst_json = json.dumps(results, default=str)
         end_conn()
-        return json
+        return rst_json
     else:
         print("error")
         end_conn()
