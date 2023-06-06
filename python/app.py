@@ -1,14 +1,8 @@
-import mariadb
-import dbcreds
 import json
 from flask import Flask
 import dbhelper
 
 app = Flask(__name__)
-
-
-conn = mariadb.connect(**dbcreds.conn_params)
-cursor = conn.cursor()
 
 @app.get('/dogs')
 def select_dogs():

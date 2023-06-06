@@ -7,11 +7,11 @@ def run_proceedure(sql, args):
         conn = mariadb.connect(**dbcreds.conn_params)
         cursor = conn.cursor()
         cursor.execute(sql, args)
-        results - cursor.fetchall()
+        results = cursor.fetchall()
     except mariadb.ProgrammingError as error:
         print('There is an issue with the DB code: ', error)
-    except mariadb.OperationalError as error:
-        print('DB connection issue: ', error)
+    except mariadb.OperationalError:
+        print('DB connection issue: ')
     except Exception as error:
         print("Unknown error: ", error)
     finally:
